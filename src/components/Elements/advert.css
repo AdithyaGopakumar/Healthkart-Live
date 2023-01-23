@@ -1,0 +1,41 @@
+.advert {
+  width: 90vw;
+  margin: 9.8rem auto;
+  /* background-color: #02b4b2; */
+}
+.ad-flex {
+  display: flex;
+  gap: 4.8rem;
+  justify-content: center;
+}
+.ad-common {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.ad-img {
+  height: 60%;
+  display: block;
+}
+.ad-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  display: block;
+}
+.ad-spacing {
+  margin-top: 2.4rem;
+}
+.ad-sm-text {
+  font-size: 1.6rem;
+  margin-top: 1.4rem;
+}
+.ad-btn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 9px;
+  background-color: #02b4b2;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 2.4rem;
+  align-self: center;
+}

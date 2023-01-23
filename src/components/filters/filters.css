@@ -1,0 +1,34 @@
+.brands-link:link,
+.brands-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.6rem;
+}
+.brands-link:hover,
+.brands-link:active {
+  color: #02b4b2;
+}
+.links-conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 0;
+}
+.link-container {
+  margin-bottom: 1rem;
+}
+.filter-headings {
+  font-size: 2rem;
+  margin: 3.6rem 0 1rem 0;
+}
+/* .filter-option {
+  display: flex;
+} */
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+  margin: 1rem 0;
+}

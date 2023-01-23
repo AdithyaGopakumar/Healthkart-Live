@@ -1,0 +1,123 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.cart {
+  margin: 2.4rem 0 2.4rem 0;
+}
+.order-summary {
+  padding: 3rem 4rem 3rem 4rem;
+  border-radius: 9px;
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.075);
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+.summary {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #333;
+}
+.cart-heading {
+  margin-bottom: 2.4rem;
+}
+.number-of-items {
+  font-size: 2.4rem;
+}
+.price-text {
+  font-size: 1.8rem;
+  color: #555;
+}
+.mrp {
+  font-size: 1.8rem;
+}
+.discount,
+.free {
+  font-size: 1.8rem;
+  color: #00a834;
+}
+.payable-amount {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.show-savings {
+  font-size: 1.4rem;
+  color: #00a834;
+}
+.shopping-cart {
+  padding: 3rem 4rem 3rem 4rem;
+  border-radius: 9px;
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.075);
+  /* height: 50rem; */
+}
+.proceed-btn:link,
+.proceed-btn:visited {
+  width: 100%;
+  display: block;
+  margin: 2rem auto;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9px;
+  border: none;
+  padding: 1rem;
+  color: #fff;
+  background-color: #00b5b7;
+}
+.proceed-btn:hover,
+.proceed-btn:active {
+  color: #fff;
+}
+.ind-item {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 0.5px solid #bbb;
+  border-radius: 9px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+.cart-item-img {
+  height: 10rem;
+  width: 10rem;
+}
+.cart-item-name {
+  font-size: 1.6rem;
+}
+.cart-item-price {
+  font-size: 2rem;
+  color: #333;
+}
+.cart-item-offer {
+  color: #00a834;
+  font-size: 1.6rem;
+}
+.cart-item-mrp-text {
+  font-size: 1.8rem;
+  color: #777;
+}
+.cart-item-old-price {
+  font-size: 1.8rem;
+  color: #777;
+  text-decoration: line-through;
+}
+.cart-price-flex {
+  display: flex;
+  width: 12.9rem;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.remove-item {
+  display: block;
+  font-size: 2.6rem;
+  color: #00b5b7;
+  height: 3.5rem;
+  background-color: #fff;
+  border: none;
+}

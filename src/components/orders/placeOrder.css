@@ -1,0 +1,40 @@
+.order-cart-img {
+  height: 100px;
+  margin-bottom: 1rem;
+}
+.order-heading {
+  color: #333;
+  margin-bottom: 2rem;
+}
+.input-txt {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+.input-box {
+  height: 4rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.order-cart-heading {
+  margin: 3rem 0 2rem 0;
+}
+.order-cart-name {
+  color: #333;
+}
+.order-cart-price {
+  color: #333;
+}
+.order-total {
+  margin: 2rem 0;
+}
+.check-out-btn {
+  background-color: #02b4b2;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 9px;
+  margin-bottom: 1rem;
+}
