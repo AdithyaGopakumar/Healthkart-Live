@@ -9,8 +9,8 @@ const DisplayOrder = (props) => {
       return orderData.map((item) => {
         console.log(item);
         return (
-          <tr key={item.id}>
-            <td className="row-text">{item.id}</td>
+          <tr key={item.order_id}>
+            <td className="row-text">{item.order_id}</td>
             <td className="row-text">{item.user}</td>
             <td className="row-text">{item.email}</td>
             <td className="row-text">{item.phone}</td>

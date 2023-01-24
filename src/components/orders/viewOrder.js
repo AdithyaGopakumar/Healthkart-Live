@@ -3,7 +3,11 @@ import axios from "axios";
 import DisplayOrder from "./displayOrder";
 import Header from "../HeaderFooter/header";
 
-const orderApi = "http://localhost:8700/orders";
+const orderApi =
+  "https://healthkart-render-api-production.up.railway.app/updateOrder";
+const orderWRTemailApi =
+  "https://healthkart-render-api-production.up.railway.app/orders";
+// const orderApi = "http://localhost:8700/orders";
 
 class ViewOrders extends React.Component {
   constructor(props) {
@@ -36,6 +40,7 @@ class ViewOrders extends React.Component {
           date: query[2].split("=")[1].split("%")[0],
           bank_name: query[3].split("=")[1].split("%")[0],
         };
+        console.log(sdata);
         let id = query[1].split("=")[1].split("_")[1];
         // fetch(`${orderApi}?order_id=${id}`, { method: "GET" })
         //   .then((res) => res.json())
@@ -43,7 +48,7 @@ class ViewOrders extends React.Component {
         //     console.log(sdata);
         //   });
         fetch(`${orderApi}/${id}`, {
-          method: "PATCH",
+          method: "PUT",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -53,7 +58,7 @@ class ViewOrders extends React.Component {
       }
     }
 
-    axios.get(`${orderApi}?email=${sessionData[1]}`).then((res) => {
+    axios.get(`${orderWRTemailApi}?email=${sessionData[1]}`).then((res) => {
       console.log(res.data, "this is data from order api");
       this.setState({ orders: res.data });
     });

@@ -4,11 +4,12 @@ import Header from "../HeaderFooter/header";
 import Extras from "../Elements/extras";
 import Advert from "../Elements/advert";
 // import axios from "axios";
-// const URL = "https://healthkart-render-api.onrender.com/cart";
-const URL = "http://localhost:8700/cart";
+const URL = "https://healthkart-render-api-production.up.railway.app/cart";
+// const URL = "http://localhost:8700/cart";
 
 // const orderURL = "https://healthkart-render-api.onrender.com/placeOrder";
-const orderURL = "http://localhost:8700/orders";
+const orderURL =
+  "https://healthkart-render-api-production.up.railway.app/placeOrder";
 
 class PlaceOrder extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class PlaceOrder extends React.Component {
 
     // let sessionData
     this.state = {
-      id: Math.floor(Math.random() * 10000),
+      order_id: Math.floor(Math.random() * 10000),
       user: sessionData ? sessionData[0] : "",
       email: sessionData ? sessionData[1] : "",
       address: "",
@@ -88,7 +89,11 @@ class PlaceOrder extends React.Component {
                 method="POST"
               >
                 {/* <form> */}
-                <input type="hidden" name="order_id" value={this.state.id} />
+                <input
+                  type="hidden"
+                  name="order_id"
+                  value={this.state.order_id}
+                />
                 <input type="hidden" name="total" value={this.state.total} />
                 <div className="row">
                   <div className="form-group col-md-6">
