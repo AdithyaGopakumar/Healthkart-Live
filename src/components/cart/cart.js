@@ -7,7 +7,7 @@ import Header from "../HeaderFooter/header";
 
 class Cart extends React.Component {
   constructor(props) {
-    console.log(props.cart, "this is cart in cart");
+    // console.log(props.cart, "this is cart in cart");
     super(props);
 
     this.state = {
@@ -81,59 +81,64 @@ class Cart extends React.Component {
       return acc + curr.old_price;
     }, 0);
     let discount = getMRP - getTotal;
-    console.log(getTotal, "the total", getMRP, discount);
+    // console.log(getTotal, "the total", getMRP, discount);
     return (
       <>
         <Header />
-        <section className="cart">
-          <div className="container">
-            <div className="row">
-              <div className="col col-md-7">
-                <div className="shopping-cart">
-                  <h1 className="cart-heading">
-                    Shopping Cart ({this.state.currCart.length} items)
-                  </h1>
-                  <>{this.renderCart(this.state.currCart)}</>
+        <div className="container brands-and-category">
+          <h1 className="cart-heading heading-text">
+            Shopping Cart ({this.state.currCart.length} items)
+          </h1>
+          <section className="cart">
+            <div className="container">
+              <div className="row">
+                <div className="col col-md-7">
+                  <div className="shopping-cart">
+                    {/* <h1 className="cart-heading">
+                      Shopping Cart ({this.state.currCart.length} items)
+                    </h1> */}
+                    <>{this.renderCart(this.state.currCart)}</>
+                  </div>
                 </div>
-              </div>
-              <div className="col col-md-5">
-                <div className="order-summary">
-                  <span className="summary">Order Summary</span>
-                  <span className="number-of-items">
-                    ({this.state.currCart.length} items)
-                  </span>
-                  <div className="total-mpr flex mt-5">
-                    <span className="price-text">Total MRP</span>
-                    <span className="mrp">₹ {getMRP}</span>
-                  </div>
-                  <div className="total-discounts flex">
-                    <span className="price-text">Total Discounts</span>
-                    <span className="discount">-₹ {discount}</span>
-                  </div>
-                  <div className="shipping-charge flex">
-                    <span className="price-text">Shipping Charges</span>
-                    <span className="free">FREE</span>
-                  </div>
-                  <hr />
-                  <div className="payable-amount flex">
-                    <span className="price-text-bold">Payable Amount</span>
-                    <span className="pay-rate">₹ {getTotal}</span>
-                  </div>
-                  <p className="show-savings">
-                    You will Save ₹ {discount} & Eligible for Free Shipping on
-                    this order
-                  </p>
-                  {/* <button class="proceed-btn">
+                <div className="col col-md-5">
+                  <div className="order-summary">
+                    <span className="summary">Order Summary</span>
+                    <span className="number-of-items">
+                      ({this.state.currCart.length} items)
+                    </span>
+                    <div className="total-mpr flex mt-5">
+                      <span className="price-text">Total MRP</span>
+                      <span className="mrp">₹ {getMRP}</span>
+                    </div>
+                    <div className="total-discounts flex">
+                      <span className="price-text">Total Discounts</span>
+                      <span className="discount">-₹ {discount}</span>
+                    </div>
+                    <div className="shipping-charge flex">
+                      <span className="price-text">Shipping Charges</span>
+                      <span className="free">FREE</span>
+                    </div>
+                    <hr />
+                    <div className="payable-amount flex">
+                      <span className="price-text-bold">Payable Amount</span>
+                      <span className="pay-rate">₹ {getTotal}</span>
+                    </div>
+                    <p className="show-savings">
+                      You will Save ₹ {discount} & Eligible for Free Shipping on
+                      this order
+                    </p>
+                    {/* <button class="proceed-btn">
                     Proceed to Pay ₹ {getTotal}
                   </button> */}
-                  <Link to="/placeOrder" className="proceed-btn">
-                    Proceed to Pay ₹ {getTotal}
-                  </Link>
+                    <Link to="/placeOrder" className="proceed-btn">
+                      Proceed to Pay ₹ {getTotal}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
         <Extras />
       </>
     );

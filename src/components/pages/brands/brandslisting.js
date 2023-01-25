@@ -40,7 +40,10 @@ class BrandListingPage extends React.Component {
     return (
       <>
         <Header />
-        <div key={this.props.match.params.brandId} className="brand-container">
+        <div
+          key={this.props.match.params.brandId}
+          className="brand-container brands-and-category"
+        >
           <div className="container">
             <div className="row">
               <div className="col col-xl-3">
@@ -59,12 +62,15 @@ class BrandListingPage extends React.Component {
                 <FilterNav brandID={this.props.match.params.brandId} />
               </div>
               <div className="col col-xl-9">
-                <div className="container products">
+                <h1 className="brand heading-text">
+                  Popular picks from {this.state.brand}
+                </h1>
+                <div className="container brands-and-category">
                   <div className="row">
                     <>
-                      <h1 className="brand">
+                      {/* <h1 className="brand">
                         Popular picks from {this.state.brand}
-                      </h1>
+                      </h1> */}
                       <BrandsListingDisplay
                         listData={this.state.brandProductList}
                       />

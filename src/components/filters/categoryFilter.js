@@ -24,7 +24,7 @@ class CategoryFilter extends React.Component {
   render() {
     return (
       <>
-        <h3 className="filter-headings">Categories</h3>
+        <h3 className="filter-headings heading-text">Categories</h3>
         <div onChange={this.categoryFilter}>
           <div className="filter-option">
             <label className="radio">

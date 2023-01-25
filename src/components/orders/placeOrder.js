@@ -24,8 +24,9 @@ class PlaceOrder extends React.Component {
       order_id: Math.floor(Math.random() * 10000),
       user: sessionData ? sessionData[0] : "",
       email: sessionData ? sessionData[1] : "",
-      address: "",
-      phone: "",
+      address: sessionData ? sessionData[2] : "",
+      phone: sessionData ? sessionData[3] : "",
+      date: "",
       total: 0,
       items: [],
     };
@@ -38,6 +39,7 @@ class PlaceOrder extends React.Component {
 
   checkOut = (e) => {
     e.preventDefault();
+
     let obj = this.state;
     fetch(orderURL, {
       method: "POST",
@@ -46,11 +48,18 @@ class PlaceOrder extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(obj),
-    }).then(console.log("orderplaced"));
-    // .then(this.props.history.push("viewOrders"));
+    })
+      .then(
+        alert(
+          "The payment gateway has been disabled. Your current order has been placed successfully and you will be redirected to the View-orders page."
+        )
+      )
+      // .then(console.log("orderplaced"))
+      .then(this.props.history.push("viewOrders"));
   };
 
   renderCart = (data) => {
+    // console.log("this is the date", this.state.date);
     if (data) {
       return data.map((item) => {
         return (
@@ -77,16 +86,16 @@ class PlaceOrder extends React.Component {
     return (
       <>
         <Header />
-        <div className="container">
+        <div className="container brands-and-category">
           <div className="panel panel-primary">
-            <h1 className="panel-heading order-heading my-5">
+            <h1 className="panel-heading order-heading my-5 heading-text">
               Confirm Your Orders
             </h1>
             <div className="panel-body">
               <form
-                // onSubmit={this.checkOut}
-                action="http://localhost:4100/paynow"
-                method="POST"
+              // onSubmit={this.checkOut}
+              // action="http://localhost:4100/paynow"
+              // method="POST"
               >
                 {/* <form> */}
                 <input
@@ -161,15 +170,15 @@ class PlaceOrder extends React.Component {
                 </div>
                 <button
                   className="check-out-btn"
-                  // onClick={this.checkOut}
+                  onClick={this.checkOut}
                   type="submit"
                 >
                   Check Out
                 </button>
               </form>
-              <button className="check-out-btn" onClick={this.checkOut}>
+              {/* <button className="check-out-btn" onClick={this.checkOut}>
                 place
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -194,12 +203,14 @@ class PlaceOrder extends React.Component {
     //   .then((data) => {
     //     console.log(data, "this is in db");
     //   });
+    const now = new Date();
+    this.setState({ date: now.toDateString() });
     this.setState({ items: this.props.cart });
     let total = this.props.cart.reduce((acc, curr) => {
       return acc + curr.sell_price;
     }, 0);
     this.setState({ total: total });
-    console.log(this.state, "this is state");
+    // console.log(this.state, "this is state");
   }
 }
 

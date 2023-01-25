@@ -46,7 +46,7 @@ class Categories extends React.Component {
     fetch(categoryURL, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.setState({ categories: data });
       });
   }

@@ -7,7 +7,7 @@ const DisplayOrder = (props) => {
   const renderTable = ({ orderData }) => {
     if (orderData) {
       return orderData.map((item) => {
-        console.log(item);
+        // console.log(item);
         return (
           <tr key={item.order_id}>
             <td className="row-text">{item.order_id}</td>
@@ -16,8 +16,8 @@ const DisplayOrder = (props) => {
             <td className="row-text">{item.phone}</td>
             <td className="row-text">Rs. {item.total}</td>
             <td className="row-text">{item.date}</td>
-            <td className="row-text">{item.bank_name} Bank</td>
-            <td className="row-text">{item.status}</td>
+            <td className="row-text">Test Bank</td>
+            <td className="row-text">Success</td>
           </tr>
         );
       });
@@ -26,8 +26,8 @@ const DisplayOrder = (props) => {
 
   return (
     <>
-      <div className="container">
-        <h1 className="mb-5 mt-5">Your Orders</h1>
+      <div className="container brands-and-category">
+        <h1 className="mb-5 mt-3 heading-text">Your Orders</h1>
         <table className="table">
           <thead>
             <tr>

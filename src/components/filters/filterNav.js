@@ -5,7 +5,7 @@ const FilterNav = (props) => {
   return (
     <>
       <div key={props.brandID} className="brands-categories">
-        <h3 className="filter-headings">Browse our Top Brands</h3>
+        <h3 className="filter-headings heading-text">Browse our Top Brands</h3>
         <div className="links-conatiner">
           <div className="link-container">
             <Link to="/brand/1" className="brands-link">

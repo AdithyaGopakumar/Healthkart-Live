@@ -32,7 +32,7 @@ class ListingPage extends React.Component {
         <Header />
         <div
           key={this.props.match.params.categoryId}
-          className="brand-container"
+          className="brand-container brands-and-category"
         >
           <div className="container">
             <div className="row">
@@ -52,10 +52,10 @@ class ListingPage extends React.Component {
               </div>
 
               <div className="col col-xl-9">
-                <h1 className="brand-">
+                <h1 className="brand- heading-text">
                   Popular picks from {this.state.category}
                 </h1>
-                <div className="container products">
+                <div className="container brands-and-category">
                   <div className="row">
                     <>
                       <ListingDisplay listData={this.state.productList} />

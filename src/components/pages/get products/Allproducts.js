@@ -90,7 +90,7 @@ class AllProducts extends React.Component {
     fetch(allrProductURL, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.setState({ allProducts: data });
       });
   }

@@ -8,9 +8,11 @@ const CategoryDisplay = () => {
   return (
     <>
       <Header />
-      <h1 className="container heading-text">Showing All Categories</h1>
-      <div className="container">
-        <Categories />
+      <div className="container brands-and-category">
+        <h1 className="container heading-text">Showing All Categories</h1>
+        <div className="container">
+          <Categories />
+        </div>
       </div>
       <Extras />
     </>

@@ -3,15 +3,15 @@ import { Link, withRouter } from "react-router-dom";
 import Cart from "../cart/cart";
 // import AppRouter from "../Routing";
 
-const getUserUrl = "http://localhost:5000/api/auth/userInfo";
+// const getUserUrl = "http://localhost:5000/api/auth/userInfo";
 // let cartItems = sessionStorage.getItem("cart");
 // console.log(cartItems);
 
-const orderApi = "http://localhost:8700/orders";
+// const orderApi = "http://localhost:8700/orders";
 
-let sessionData = sessionStorage.getItem("userData")
-  ? sessionStorage.getItem("userData").split(",")
-  : [];
+// let sessionData = sessionStorage.getItem("userData")
+//   ? sessionStorage.getItem("userData").split(",")
+//   : [];
 
 class Header extends React.Component {
   constructor() {
@@ -23,58 +23,66 @@ class Header extends React.Component {
   }
 
   handleLogOut = () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("userData");
+    alert(
+      "This is a test site. Login, logout and payment gateway have been disabled. Please note that any actions taken on this site will not have any real-world impact."
+    );
+    // sessionStorage.removeItem("token");
+    // sessionStorage.removeItem("userData");
     // console.log(this.state.userData, "data after logout");
-    this.setState({ userData: "" });
-    this.props.history.push("/");
+    // this.setState({ userData: "" });
+    // this.props.history.push("/");
   };
 
   conditionalHeader = () => {
-    if (this.state.userData.auth === false || this.state.userData === "") {
-      // console.log(this.state.userData, "form if");
-      return (
-        <>
-          <Link className="header-link" to="#">
-            My Accounts & Orders
-          </Link>
-          <Link className="header-link" to={"/register"}>
-            Register
-          </Link>
-          <Link className="header-link" to={"/login"}>
-            Login
-          </Link>
-        </>
-      );
-    } else {
-      // console.log(this.state.userData, "form else");
-      let data = this.state.userData;
-      let outArr = [data.name, data.email];
-      console.log(outArr);
-      sessionStorage.setItem("userData", outArr);
-      return (
-        <>
-          <Link className="header-link" to="#">
-            My Accounts & Orders
-          </Link>
-          <Link className="header-link" to={"/"}>
-            Welcome {this.state.userData.name.split(" ")[0]}
-          </Link>
-          <button className="logout-btn" onClick={this.handleLogOut}>
-            Logout
-          </button>
-          <Link className="header-link" to="/cart">
-            <div className="cart-icn">
-              <ion-icon name="cart-outline"></ion-icon>
-              <span className="cart-item-number">
-                {sessionStorage.getItem("cart")}
-              </span>
-            </div>
-          </Link>
-        </>
-      );
-    }
+    // if (this.state.userData.auth === false || this.state.userData === "") {
+    // console.log(this.state.userData, "form if");
+    // return (
+    // <>
+    // <Link className="header-link" to="#">
+    // My Accounts & Orders
+    // </Link>
+    // <Link className="header-link" to={"/register"}>
+    // Register
+    // </Link>
+    // <Link className="header-link" to={"/login"}>
+    // Login
+    // </Link>
+    // </>
+    // );
+    // } else {
+    // console.log(this.state.userData, "form else");
+    // let data = this.state.userData;
+    let outArr = [
+      "Test",
+      "test@123.com",
+      "123 street ABC building XYZ",
+      "9876543210",
+    ];
+    // console.log(outArr);
+    sessionStorage.setItem("userData", outArr);
+    return (
+      <>
+        <Link className="header-link" to="#">
+          My Accounts & Orders
+        </Link>
+        <Link className="header-link" to={"/"}>
+          Welcome Test
+        </Link>
+        <button className="logout-btn" onClick={this.handleLogOut}>
+          Logout
+        </button>
+        <Link className="header-link" to="/cart">
+          <div className="cart-icn">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span className="cart-item-number">
+              {sessionStorage.getItem("cart")}
+            </span>
+          </div>
+        </Link>
+      </>
+    );
   };
+  // };
 
   render() {
     return (
@@ -168,19 +176,19 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    fetch(getUserUrl, {
-      method: "GET",
-      headers: {
-        "access-token": sessionStorage.getItem("token"),
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data, "form api");
-        this.setState({
-          userData: data,
-        });
-      });
+    // fetch(getUserUrl, {
+    // method: "GET",
+    // headers: {
+    // "access-token": sessionStorage.getItem("token"),
+    // },
+    // })
+    // .then((res) => res.json())
+    // .then((data) => {
+    // console.log(data, "form api");
+    // this.setState({
+    // userData: data,
+    // });
+    // });
     // let cartItems = sessionStorage.getItem("cart");
     // this.setState({ cartItem: cartItems });
   }
